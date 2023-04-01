@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MVC.ODEV.Models.Table>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Öğretmen Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kayıt", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrtAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrtSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrtYas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrtAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrtSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrtYas)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.OgrtID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.OgrtID })
+        </td>
+    </tr>
+}
+
+</table>

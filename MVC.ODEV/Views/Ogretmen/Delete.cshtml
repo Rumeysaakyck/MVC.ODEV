@@ -1,0 +1,47 @@
+﻿@model MVC.ODEV.Models.Table
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Öğretmen Sil!</h3>
+
+<h4>silmek istediğine emin misin?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrtAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrtAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrtSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrtSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrtYas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrtYas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-info" /> |
+            @Html.ActionLink("Öğretmen listesine Dön", "Index")
+        </div>
+    }
+</div>
